@@ -10,6 +10,7 @@ const Link = styled.a`
     display: block;
     content: "";
     height: 4px;
+    margin-bottom: -4px;
     margin-top: 0px;
     background-color: #33a6;
     width: 100%;
@@ -17,8 +18,8 @@ const Link = styled.a`
   }
   &:hover {
     &::after {
-      margin-top: -1.3em;
-      height: calc(1.3em + 4px);
+      margin-top: calc(-1.3em + 4px);
+      height: 1.3em;
     }
   }
 `;
