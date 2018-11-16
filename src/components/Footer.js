@@ -1,5 +1,27 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+
+const Link = styled.a`
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+  box-sizing: border-box;
+  &::after {
+    display: block;
+    content: "";
+    height: 4px;
+    margin-top: 0px;
+    background-color: #33a6;
+    width: 100%;
+    transition-duration: 0.2s;
+  }
+  &:hover {
+    &::after {
+      margin-top: -1.3em;
+      height: calc(1.3em + 4px);
+    }
+  }
+`;
 
 const FooterDiv = styled.div`
   position: static;
@@ -14,6 +36,17 @@ const FooterDiv = styled.div`
   width: 100%;
 `;
 
-const Footer = () => <FooterDiv>Footer</FooterDiv>;
+const Footer = () => (
+  <FooterDiv>
+    Made by{" "}
+    <Link
+      href={"https://github.com/devsumanmdn"}
+      title={"Github(@devsumanmdn)"}
+      target={"_blank"}
+    >
+      @devsumanmdn
+    </Link>
+  </FooterDiv>
+);
 
 export default Footer;
